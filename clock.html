@@ -42,27 +42,44 @@
    </style>
 
    <script type="text/javascript">
+	
+	var ssTick = 0;
+   	
 
    	$(document).ready(function(){
-			console.log("doc loaded")
+		setInterval(function(){
+
+			var second = $("#ss");
+			var minute = $("#mm");
+			var hour = $("hh");
+
+			
+
+			ssTick++
+
+			if(ssTick < 10){
+
+				ssTick = "0" + ssTick
+			}
+			console.log(ssTick)
+			second.html(ssTick);
+
+			
+
+		}, 1000)
    	});
 
    </script>
-
-
 
   </head>
   <body>
 
  	<div id="clock">
-	  	<div id="h1" class="time">0</div>
-	  	<div id="h2" class="time">0</div>
+	  	<div id="hh" class="time">00</div>
 	  	<span class="time">:</span>
-	  	<div id="m1" class="time">0</div>
-	  	<div id="m2" class="time">0</div>
+	  	<div id="mm" class="time">00</div>
 	  	<span class="time">:</span>
-	  	<div id="s1" class="time">0</div>
-	  	<div id="s2" class="time">0</div>
+	  	<div id="ss" class="time">00</div>
 	</div>
   </body>	
  </html>
